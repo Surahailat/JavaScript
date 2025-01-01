@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .help{
+            background-color:yellow;
+            width: 20%;
+            height: 50px;
+            text-align: center;
+            border: 3px seagreen solid;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="help" id="para">Can i help you?</p>
+    </div>
+    <script>
+        let mypara = document.getElementById("para");
+        mypara.onmouseover= function () {
+            mypara.innerHTML="Hello!";
+            
+        };
+
+        
+        mypara.onmouseout= function () {
+            mypara.innerHTML="Can i help you?";
+            
+        };
+    </script>
+</body>
+</html>
