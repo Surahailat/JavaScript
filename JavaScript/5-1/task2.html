@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .mobile-header {
+            background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 5%;
+            color: white;
+        }
+
+        .logo h2 {
+            font-size: 24px;
+        }
+
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .links {
+            display: none;
+            flex-direction: column;
+            background-color: brown;
+            position: absolute;
+            top: 60px;
+            right: 5%;
+            width: 90%;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .links a {
+            color: antiquewhite;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .links a:last-child {
+            border-bottom: none;
+        }
+
+        .links a:hover {
+            background-color: #a05252;
+        }
+
+        
+        @media screen and (min-width: 426px) {
+            .icon {
+                display: none;
+            }
+
+            .links {
+                display: flex;
+                position: static;
+                flex-direction: row;
+                justify-content: flex-end;
+                background: none;
+                box-shadow: none;
+                width: auto;
+                border-radius: 0;
+            }
+
+            .links a {
+                padding: 0 15px;
+                border: none;
+            }
+
+            .links a:hover {
+                background: none;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mobile-header">
+        <div class="logo">
+            <h2>Logo</h2>
+        </div>
+        <div id="myLinks" class="links">
+            <a href="#">Home</a>
+            <a href="#">Articles</a>
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const links = document.getElementById("myLinks");
+            if (links.style.display === "flex") {
+                links.style.display = "none";
+            } else {
+                links.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+
+</html>
