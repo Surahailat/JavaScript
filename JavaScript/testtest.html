@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll to Top Button</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .content {
+      padding: 20px;
+      height: 2000px; /* Simulate a long page */
+    }
+
+    /* Scroll to top button */
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: none; /* Hidden by default */
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    #scrollToTopBtn:hover {
+      background-color: #45a049;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Scroll Down to See the Button</h1>
+  <div class="content">
+    <p>Scroll down the page to see the "Back to Top" button. This is a simple example of how you can create a scroll-to-top button using JavaScript.</p>
+    <p>Keep scrolling...</p>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn">↑</button>
+
+  <script>
+    // Select the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Show/hide the button on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = "flex"; // Show the button
+      } else {
+        scrollToTopBtn.style.display = "none"; // Hide the button
+      }
+    });
+
+    // Scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // Smooth scrolling effect
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+<!-- Email Validation -->
+
+<!-- ^: يشير إلى بداية النص.
+[^\s@]+: يطابق أي سلسلة من الأحرف التي لا تحتوي على فراغات (\s) أو رمز @.
+@: يطابق رمز البريد الإلكتروني.
+[^\s@]+: يطابق اسم النطاق (مثل "example").
+\.: يطابق النقطة (".")، لكنها تحتاج إلى هروب (\) لأنها رمز خاص في التعبير النمطي.
+[^\s@]+: يطابق لاحقة النطاق (مثل "com" أو "org").
+$: يشير إلى نهاية النص. -->
+
+<!-- const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const isValidEmail = email => emailRegex.test(email);
+
+// Example usage:
+console.log(isValidEmail("example@example.com")); // true
+console.log(isValidEmail("invalid-email")); // false -->
+
+
+
+
+
+<!-- Password Validation
+For a password, let's assume the requirements are at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one special character. -->
+
+<!-- const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const isValidPassword = password => passwordRegex.test(password);
+
+// Example usage:
+console.log(isValidPassword("Password123!")); // true
+console.log(isValidPassword("pass")); // false -->
+
+
+
+
+
+<!-- Phone Number Validation
+For a phone number, let's assume a simple pattern of 10 digits. -->
+
+
+<!-- const phoneNumberRegex = /^\d{10}$/;
+const isValidPhoneNumber = phoneNumber => phoneNumberRegex.test(phoneNumber);
+
+// Example usage:
+console.log(isValidPhoneNumber("1234567890")); // true
+console.log(isValidPhoneNumber("123-456-7890")); // false -->
+
+
+
+
+import re
+
+<!-- def validate_email(email):
+    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    return re.match(pattern, email) is not None -->
+
+
+
+
+
+    <!-- // Check if the word "hello" exists in the text
+        console.log(/hello/i.test("Hello world")); // true
+
+        // Replace "world" with "JavaScript"
+        console.log("Hello world".replace(/world/, "JavaScript")); // Hello JavaScript
+
+        // Validate email address
+        let email = 'example@gmail.com';
+        let regex1 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
+        console.log(regex1.test(email)); // true
+
+        // Validate phone number
+        let phone = '+962790011223';
+        let regex2 = /^(?:+962|962)?7[7-9]\d{7}$/;
+        console.log(regex2.test(phone)); // true
+
+        // Validate username
+        let user = 'user123';
+        let regex3 = /^[a-zA-Z0-9]{3,20}$/;
+        console.log(regex3.test(user)); // true -->

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SessionStorage Example</title>
+</head>
+<body>
+
+    <h2>SessionStorage Example</h2>
+
+    <button onclick="storeData()">Store Data</button>
+    <button onclick="retrieveData()">Retrieve Data</button>
+    <button onclick="clearData()">Clear Data</button>
+
+    <script>
+        function storeData() {
+            sessionStorage.setItem('username', 'john_doe');
+            alert('Data stored!');
+        }
+
+        function retrieveData() {
+            let username = sessionStorage.getItem('username');
+            alert('Stored Username: ' + username);
+        }
+
+        function clearData() {
+            sessionStorage.clear();
+            alert('All data cleared!');
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function number(n1, n2) {
+        //     let value = 0;
+        //     let value1 = 0;
+        //     for (let i = n1; i <= n2; i++) {
+
+        //         if (i % 2 == 0) {
+        //             value = value + i
+
+        //         }
+        //         else {
+        //             value1 = value1 + i
+
+        //         }
+        //     }
+        //     console.log(value);
+        //     console.log(value1);
+
+        // }
+        // number(10, 20)
+
+
+        function number(num1, num2, num3) {
+            if (num1 >= num2 && num1 >= num3) {
+                return num1;
+            } else if (num2 >= num1 && num2 >= num3) {
+                return num2;
+            } else {
+                return num3;
+            }
+
+
+        }
+        number(10,40,90)
+        console.log(number(10,40,90));
+        
+    </script>
+</body>
+
+</html> -->

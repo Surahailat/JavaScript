@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Flags</title>
+</head>
+<body>
+    <select id="Flag">
+        <option value="" disabled selected>Select a Country</option>
+        <option value="jo">Jordan</option>
+        <option value="ksa">Saudi Arabia</option>
+        <option value="lb">Lebanon</option>
+    </select>
+
+    
+    <div id="flagContainer" style="margin-top: 20px;"></div>
+
+    <script>
+        const flagSelect = document.getElementById("Flag");
+        const flagContainer = document.getElementById("flagContainer");
+
+        const flags = {
+            jo: "https://flagcdn.com/w320/jo.png",
+            ksa: "https://flagcdn.com/w320/sa.png",
+            lb: "https://flagcdn.com/w320/lb.png"
+        };
+
+        
+        flagSelect.addEventListener("change", function () {
+            const country = this.value;
+            if (flags[country]) {
+                
+                flagContainer.innerHTML = `<img src="${flags[country]}" alt="Flag of ${country}" style="width: 200px; height: auto;">`;
+            } else {
+                
+                flagContainer.innerHTML = "";
+            }
+        });
+    </script>
+</body>
+</html>
