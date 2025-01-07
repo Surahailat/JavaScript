@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>Enter a Fname: </label><br>
+        <input type="text" id="fname" oninput="validatefname()">
+        <span id="fname-error" class="error-message"></span><br>
+
+
+        <label>Enter a Lname: </label><br>
+        <input type="text" id="lname" oninput="validatelname()">
+        <span id="lname-error" class="error-message"></span><br>
+
+
+        <label>Enter a Bdate: </label><br>
+        <input type="text" id="bdate" oninput="validatebdate()">
+        <span id="date-error" class="error-message"></span><br>
+
+
+        <label>Enter an email: </label><br>
+        <input type="email" id="email" oninput="validateemail()">
+        <span id="email-error" class="error-message"></span><br>
+
+
+        <label>Confirm Email: </label><br>
+        <input type="email" id="conemail" oninput="validateconemail()">
+        <span id="cone-error" class="error-message"></span><br>
+
+
+        <label>Password: </label><br>
+        <input type="password" id="pass" oninput="validatepass()">
+        <span id="pass-error" class="error-message"></span><br>
+
+
+        <label>Confirm Password: </label><br>
+        <input type="password" id="conpass" oninput="validateconpass()">
+        <span id="conp-error" class="error-message"></span><br>
+
+        <script>
+            function validatefname() {
+                const fnameinput = document.getElementById("fname").value;
+                const fnameerror = document.getElementById("fname-error");
+                if (!fnameinput.match(/^[a-zA-Z_@.]{7,20}$/)) {
+                    fnameerror.textContent = "Username must be 7-20 characters long and contain only letters and numbers.";
+                    return false;
+                } else {
+                    fnameerror.textContent = "";
+                    return true;
+                }
+            }
+
+            function validatelname() {
+                const lnameinput = document.getElementById("lname").value;
+                const lnameerror = document.getElementById("lname-error");
+                if (!lnameinput.match(/^[a-zA-Z_@.]{7,20}$/)) {
+                    lnameerror.textContent = "Username must be 7-20 characters long and contain only letters.";
+                    return false;
+                } else {
+                    lnameerror.textContent = "";
+                    return true;
+                }
+            }
+
+            function validatebdate() {
+                const bdateinput = document.getElementById("bdate").value;
+                const bdateerror = document.getElementById("date-error");
+                if (!bdateinput.match(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/[0-9]{4}$/)) {
+                    bdateerror.textContent = "The format should be dd/mm/yyyy.";
+                    return false;
+                } else {
+                    bdateerror.textContent = "";
+                    return true;
+                }
+            }
+
+            function validateemail() {
+                const emailinput = document.getElementById("email").value;
+                const emailerror = document.getElementById("email-error");
+                if (!emailinput.match(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/)) {
+                    emailerror.textContent = "The e-mail is not valid.";
+                    return false;
+                } else {
+                    emailerror.textContent = "";
+                    return true;
+                }
+            }
+
+            function validateconemail() {
+                const emailinput = document.getElementById("email").value;
+                const conemailinput = document.getElementById("conemail").value;
+                const conerror = document.getElementById("cone-error");
+                if (emailinput !== conemailinput) {
+                    conerror.textContent = "Emails do not match.";
+                    return false;
+                }
+                conerror.textContent = "";
+                return true;
+            }
+
+            function validatepass() {
+                const passinput = document.getElementById("pass").value;
+                const passerror = document.getElementById("pass-error");
+                if (!passinput.match(/^(?=.*[0-9])(?=.*[!@#$%^&])[a-zA-Z0-9!@#$%^&]{8,20}$/)) {
+                    passerror.textContent = "Password must be 8-20 characters and can include special characters.";
+                    return false;
+                } else {
+                    passerror.textContent = "";
+                    return true;
+                }
+            }
+
+            function validateconpass() {
+                const passinput = document.getElementById("pass").value;
+                const conpassinput = document.getElementById("conpass").value;
+                const conpasserror = document.getElementById("conp-error");
+                if (passinput !== conpassinput) {
+                    conpasserror.textContent = "Passwords do not match.";
+                    return false;
+                }
+                conpasserror.textContent = "";
+                return true;
+            }
+        </script>
+
+    </form>
+</body>
+
+</html>
