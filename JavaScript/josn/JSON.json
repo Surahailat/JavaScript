@@ -1,0 +1,11 @@
+{
+    "String": "sura",
+    "number":"23",
+    "Object":{
+        "name":"sura",
+        "age":23
+    },
+    "array":["one","two","three"],
+    "Boolean":true,
+    "null ":null 
+}

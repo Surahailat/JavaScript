@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Create a Simple Calculator
+        // Problem: Create a function simpleCalculator(a, b, operator) that performs basic arithmetic operations (addition, subtraction, multiplication, division) based on the given operator.
+
+        // Input/Output Example:
+
+        // Input: 5, 3, '+'
+        // Output: 8
+
+        // function simpleCalculator(a, b, operator) {
+        //     switch (Operator) {
+        //         case '+':
+        //             return a + b;
+        //         case '-':
+        //             return a-b;
+        //         case
+
+        //     }
+
+
+        //         Check if a Number is Prime
+        // Problem: Create a function isPrime(num) that checks if a number is prime. A prime number is only divisible by 1 and itself.
+
+        // Input/Output Example:
+
+        // Input: 7
+
+        // Output: true
+
+        // Input: 10
+
+        // Output: false
+
+
+        function primeNum(num) {
+            for (let i = 1; i <= num; i++) {
+                if (num == 1) return false;
+                else if (i == num || i == 1) continue;
+                else if (num % i == 0) return false;
+            }
+            return true
+        }
+
+        // أمثلة الاختبار
+        console.log(primeNum(7));  // Output: true
+        console.log(primeNum(10)); // Output: false
+        console.log(primeNum(2));  // Output: true
+        console.log(primeNum(1));  // Output: false
+        console.log(primeNum(17)); // Output: true
+
+
+    </script>
+</body>
+
+</html>

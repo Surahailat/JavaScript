@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out {
+            display: flex;
+            justify-content: left;
+            gap: 14px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>User Data</h1>
+    <button onclick="fetchUserData()">Fetch Data</button>
+    <div id="output" class="out"></div>
+
+    <script>
+        async function fetchUserData() {
+            const response = await fetch("https://api.npoint.io/444a2d2ddd82a70a9df2");
+            const data = await response.json();
+            const output1 = document.getElementById('output');
+
+
+            output1.innerHTML = '';
+
+
+            for (const user of data) {
+                const userDiv = document.createElement('div');
+                userDiv.innerHTML = `
+                    <div style="border: 5px solid black; padding: 10px; margin: 10px 0; border-radius: 10px">
+                        <p><strong>Name:</strong> ${user.name}</p>
+                        <p><strong>Age:</strong> ${user.age}</p>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        <p><strong>Profession:</strong> ${user.Profession}</p>
+                    </div>
+                `;
+                output1.appendChild(userDiv);
+            }
+        }
+    </script>
+</body>
+
+</html>

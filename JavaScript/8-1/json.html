@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .out{
+      display: flex;
+      justify-content: left;
+      gap: 14px;
+    border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>User Cards</h1>
+  <button onclick="useadata()">Load Users</button>
+  <div id="output" class="out"></div>
+  <script>
+    function useadata() {
+      let output = document.getElementById("output");
+      const JSON_user = new XMLHttpRequest();
+      JSON_user.open("GET", "Json.json");
+      JSON_user.onload = function () {
+        if (JSON_user.status == 200) {
+          
+          const users = JSON.parse(JSON_user.responseText);
+
+         
+          output.innerHTML = "";
+
+         
+          users.forEach(function(user) {
+            output.innerHTML += `
+              <div style="border: 5px solid black; padding: 10px; margin: 10px 0;border-radius: 10px">
+                <p><strong>${user.name}</strong> </p>
+                <p><strong>Age:</strong> ${user.age}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Profession:</strong> ${user.Profession}</p>
+              </div>
+            `;
+          });
+        } else {
+          output.innerHTML = "<p>Failed to load JSON file.</p>";
+        }
+      };
+      JSON_user.send();
+    }
+  </script>
+</body>
+
+</html>

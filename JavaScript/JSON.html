@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display JSON File</h1>
+    <button id="loadJson">Load JSON</button>
+    <pre id="jsonDisplay">Click the button to load JSON data...</pre>
+
+    <script>
+        // Function to fetch and display JSON data
+        document.getElementById('loadJson').addEventListener('click', function() {
+            fetch('data.json') // Replace 'data.json' with your JSON file path
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Display JSON in a formatted way
+                    const jsonDisplay = document.getElementById('jsonDisplay');
+                    jsonDisplay.textContent = JSON.stringify(data, null, 4); // Pretty-print JSON
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON:', error);
+                });
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- (Javascript Object Notation) -->
+<!-- JSON: Format for sharing data between server and client -->
+
+<!-- JSON Syntax
+
+1.Data Added Inside Curly Braces {}
+2.Data Added With Key: Value
+3.Key Should Be String Wrapped In Double Quotes
+4.Data Separated By Comma
+5.Square Brackets []: For Arrays
+6.Curly Braces {} For Objects
+ -->
+
+
+ <!-- Available Data Types
+
+ 1.String
+ 2.Number
+ 3.Object
+ 4.Array
+ 5.Boolean Values(true / false)
+ 6.null 
+ -->
